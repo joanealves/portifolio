@@ -12,3 +12,5 @@ export const theme = {
     heading: 'IBM Plex Mono, monospace'
   }
 } 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";

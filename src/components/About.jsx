@@ -43,11 +43,13 @@ const styles = {
     fontFamily: 'IBM Plex Mono, monospace',
   },
   titleBox: {
-    backgroundColor: '#292F36',
-    border: '2px solid #98FAEC', 
-    borderRadius: '8px',
-    display: 'inline-block',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     padding: '8px 16px',
+    backgroundColor: '#292F36',
+    border: '2px solid #98FAEC',
+    borderRadius: '20px 20px 0 20px', 
     marginBottom: '32px',
   },
   titleText: {
