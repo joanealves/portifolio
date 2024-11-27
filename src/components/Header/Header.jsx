@@ -1,4 +1,4 @@
-import { Box, Text, Link, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import { Box, Text, Link, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import { FaInstagram, FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
 
@@ -17,7 +17,7 @@ const Header = () => {
       <Box
         width="100%"
         maxW="1664px"
-        px="128px"
+        px={{ base: "16px", md: "128px" }}
         display="flex"
         alignItems="center"
         justifyContent="space-between"
@@ -56,14 +56,20 @@ const Header = () => {
 
           {/* Campo de Busca */}
           <InputGroup maxW="200px" mr="64px">
-            <InputLeftElement pointerEvents='none'>
+            <InputRightElement 
+              pointerEvents='none'
+              height="100%"
+              display="flex"
+              alignItems="center"
+            >
               <SearchIcon color='gray.500' />
-            </InputLeftElement>
+            </InputRightElement>
             <Input
               bg="white"
               borderRadius="24px"
               placeholder="Buscar..."
               _placeholder={{ color: 'gray.500' }}
+              paddingRight="40px"
             />
           </InputGroup>
 
