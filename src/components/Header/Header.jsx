@@ -1,6 +1,6 @@
 import { Box, Text, Link, Input, InputGroup, InputRightElement } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
-import { FaInstagram, FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa';
 
 const Header = () => {
   return (
@@ -75,24 +75,15 @@ const Header = () => {
 
           {/* Ícones de Redes Sociais */}
           <Box display="flex" alignItems="center" gap="32px">
-            <Box
-              as={FaLinkedin}
-              color="#12F7D6"
-              size="20px"
-              cursor="pointer"
-            />
-            <Box
-              as={FaGithub}
-              color="#12F7D6"
-              size="20px"
-              cursor="pointer"
-            />
-            <Box
-              as={FaWhatsapp}
-              color="#12F7D6"
-              size="20px"
-              cursor="pointer"
-            />
+            <Link href="https://www.linkedin.com/in/joane-alves-ribeiro/" isExternal>
+              <Box as={FaLinkedin} color="#12F7D6" size="20px" cursor="pointer" />
+            </Link>
+            <Link href="https://github.com/joanealves" isExternal>
+              <Box as={FaGithub} color="#12F7D6" size="20px" cursor="pointer" />
+            </Link>
+            <Link href="https://wa.me/5531985201743" isExternal>
+              <Box as={FaWhatsapp} color="#12F7D6" size="20px" cursor="pointer" />
+            </Link>
           </Box>
         </Box>
       </Box>

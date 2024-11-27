@@ -1,113 +1,93 @@
-import heroImage from '../../assets/heroImage.png'; 
+import { Box, Text, Image, Link, Flex } from '@chakra-ui/react';
+import { EmailIcon } from '@chakra-ui/icons';
+import heroImage from '../../assets/heroImage.png';
+
 const Hero = () => {
   return (
-    <div style={styles.heroContainer}>
-      <img src={heroImage} alt="Hero" style={styles.heroImage} />
-      <h1 style={styles.mainTitle}>
-        Hey<br />
-        I’m <span style={styles.highlightText}>Joane</span>,<br />
-        Full-stack developer
-      </h1>
-      <p style={styles.description}>
-        I help business grow by crafting amazing web experiences. If you’re looking for a developer that likes to get stuff done,
-      </p>
-      <button style={styles.contactButton}>
-        Let’s Talk
-        <span style={styles.icon}>📧</span> 
-      </button>
-      <div style={styles.statsContainer}>
-        <div style={styles.stat}>
-          <p style={styles.statNumber}>4</p>
-          <p style={styles.statText}>Programming<br />Language</p>
-        </div>
-        <div style={styles.stat}>
-          <p style={styles.statNumber}>6</p>
-          <p style={styles.statText}>Development<br />Tools</p>
-        </div>
-        <div style={styles.stat}>
-          <p style={styles.statNumber}>3</p>
-          <p style={styles.statText}>Years of<br />Experience</p>
-        </div>
-      </div>
-    </div>
-  );
-};
+    <Box
+      as="section"
+      width="100%"
+      minHeight="100vh"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      backgroundColor="#1A1A1A"
+      px={{ base: '16px', md: '128px' }}
+    >
+      <Flex
+        direction="column"
+        alignItems="center"
+        gap={{ base: '32px', md: '48px' }}
+        textAlign={{ base: 'center', md: 'left' }}
+        width="100%"
+        maxW="1440px"
+      >
+        {/* Imagem Centralizada */}
+        <Box>
+          <Image
+            src={heroImage}
+            alt="Hero"
+            width={{ base: '200px', md: '300px' }}
+            height={{ base: '300px', md: 'auto' }}
+            borderRadius="full"
+            objectFit="cover"
+          />
+        </Box>
 
-const styles = {
-  heroContainer: {
-    width: '390px',
-    margin: '64px 43px',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    color: '#FFFF',
-  },
-  heroImage: {
-    width: '330px',
-    height: '520px',
-    marginBottom: '32px',
-  },
-  mainTitle: {
-    fontFamily: 'Ubuntu, sans-serif',
-    fontSize: '32px',
-    color: '#98FAEC',
-    textAlign: 'center',
-    marginBottom: '16px',
-  },
-  highlightText: {
-    color: '#FFFF',
-  },
-  description: {
-    fontFamily: 'IBM Plex Mono, monospace',
-    fontSize: '16px',
-    color: '#FFFF',
-    textAlign: 'center',
-    marginBottom: '24px',
-  },
-  contactButton: {
-    fontFamily: 'IBM Plex Mono, monospace',
-    fontSize: '32px',
-    color: '#98FAEC',
-    backgroundColor: 'transparent',
-    border: 'none',
-    cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: '32px',
-  },
-  icon: {
-    width: '24px',
-    height: '24px',
-    backgroundColor: 'grey',
-    borderRadius: '50%',
-    display: 'inline-flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: '8px',
-  },
-  statsContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    gap: '16px', 
-    marginTop: '32px', 
-  },
-  stat: {
-    display: 'flex', 
-    alignItems: 'center', 
-    gap: '8px', 
-  },
-  statNumber: {
-    fontFamily: 'IBM Plex Mono, monospace',
-    fontSize: '48px',
-    fontWeight: '500',
-    color: '#98FAEC', 
-  },
-  statText: {
-    fontFamily: 'IBM Plex Mono, monospace',
-    fontSize: '14px',
-    color: '#FFFF',
-  },
+        {/* Texto e Link */}
+        <Box width="100%" maxW="600px">
+          <Text
+            as="h1"
+            fontSize={{ base: '32px', md: '64px' }}
+            color="#98FAEC"
+            fontFamily="Ubuntu, sans-serif"
+            lineHeight="1.2"
+            mb="16px"
+          >
+            Hey<br />
+            I’m <Text as="span" color="#FFF">Joane</Text>,<br />
+            Full-stack developer
+          </Text>
+          <Text
+            fontSize={{ base: '16px', md: '20px' }}
+            color="#FFF"
+            fontFamily="IBM Plex Mono, monospace"
+            mb="24px"
+          >
+            I help business grow by crafting amazing web experiences. If you’re
+            looking for a developer that likes to get stuff done,
+          </Text>
+          <Link
+            href="mailto:joanedev@gmail.com"
+            color="#98FAEC"
+            fontSize="20px"
+            fontWeight="bold"
+            display="flex"
+            alignItems="center"
+            gap="8px"
+            textDecoration="none"
+            _hover={{ textDecoration: 'underline' }}
+          >
+            Let’s Talk
+            <Box
+              as="span"
+              width="24px"
+              height="24px"
+              bg="rgba(152, 250, 236, 0.1)"
+              borderRadius="full"
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              color="#98FAEC"
+              fontWeight="bold"
+            >
+              <EmailIcon />
+            </Box>
+          </Link>
+        </Box>
+      </Flex>
+    </Box>
+  );
 };
 
 export default Hero;
